@@ -1,6 +1,7 @@
 const express = require('express');
 
 const postRouter = require('./routers/posts.js');
+const todoRouter = require('./routers/todos.js');
 const requestLogger = require('./middleware/request-logger.js');
 const accessController = require('./middleware/accessController');
 const errorHandler = require('./middleware/error-handler.js');
@@ -17,6 +18,7 @@ app.use(
 );
 app.use(accessController);
 app.use('/api', postRouter);
+app.use('/api', todoRouter);
 app.get('/*', (req, res) => res.redirect('/'));
 app.use(errorHandler);
 

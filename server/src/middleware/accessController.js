@@ -16,6 +16,5 @@ module.exports = function (req, res, next) {
 			'Access-Control-Allow-Methods',
 			req.get('Access-Control-Request-Method')
 		);
-
 	next();
 };
